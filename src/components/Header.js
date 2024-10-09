@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -19,8 +20,8 @@ const Header = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('user');
-        // navigate('/');
-        window.location.href = '/'
+        toast.success('LogOut successful');
+        navigate('/');
     };
 
     return (

@@ -31,16 +31,21 @@ function PostList() {
             <div className="container">
                 <h2>{user?.name}</h2>
                 <div className='row mt-4'>
-                    {posts.map(post => (
-                        <div className='col-md-4' key={post.id}>
-                            <div className='card'>
-                                <div className='card-body'>
-                                    <h5>{post.title}</h5>
-                                    <p>{post.body}</p>
+                    {posts && posts.length > 0 ? (
+                        posts.map(post => (
+                            <div className='col-md-4' key={post.id}>
+                                <div className='card'>
+                                    <div className='card-body'>
+                                        <h5>{post.title}</h5>
+                                        <p>{post.body}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                    ) : (
+                        <div>No posts available</div>
+                    )}
+
                 </div>
             </div>
         </section>
